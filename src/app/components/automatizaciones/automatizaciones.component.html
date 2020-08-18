@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="md-5">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a [class]="claseCambio1" style="color:#fff; background-color:#a2a2a2;" href="#" (click)="cambiaPanel('1')">
+                    <i class="fa fa-upload" aria-hidden="true"> </i> Sin documentacion
+                </a>
+            </li>
+            <li class="nav-item">
+                <!-- <a [class]="claseCambio2" style="color:#fff; background-color:#a2a2a2;" href="#" (click)="cambiaPanel('2')">Link</a> -->
+            </li>
+        </ul>
+        <br>
+        <app-documentacion *ngIf="Menu1"></app-documentacion>
+    </div>
+</div>
