@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class JIRAService {
 
   constructor(private http: HttpClient) {
-    console.log('JIRA service listoes');
+    console.log('JIRA service listosss');
   }
 
   getQuery(query: string) {
