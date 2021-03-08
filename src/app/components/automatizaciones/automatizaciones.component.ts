@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { JIRAService } from '../../services/jira.service';
 
 @Component({
   selector: 'app-automatizaciones',
@@ -9,14 +7,14 @@ import { JIRAService } from '../../services/jira.service';
 export class AutomatizacionesComponent implements OnInit {
 
   Menu1 = true;
+  Menu2 = false;
   claseCambio1 = 'nav-link active';
   claseCambio2 = 'nav-link';
+  loading: boolean = true;
 
-  constructor(private router: ActivatedRoute, private jira: JIRAService) {
-    this.jira.getMyIssues().subscribe(data => {
-      console.log(data);
-    });
-   }
+  constructor() {
+    this.loading = false;
+  }
 
   ngOnInit(): void {
   }
@@ -26,11 +24,12 @@ export class AutomatizacionesComponent implements OnInit {
       this.claseCambio1 = 'nav-link active';
       this.claseCambio2 = 'nav-link';
       this.Menu1 = true;
+      this.Menu2 = false;
     } else if (id === '2') {
       this.claseCambio2 = 'nav-link active';
       this.claseCambio1 = 'nav-link';
       this.Menu1 = false;
+      this.Menu2 = true;
     }
   }
-
 }

@@ -1,8 +1,26 @@
-<div class="row">
-    <div class="col-md-4">
-        bloque 1
-    </div>
-    <div class="col-md-8">
-        bloque 2
+<app-loading *ngIf="loading"></app-loading>
+<div class="row" *ngIf="!loading">
+    <div class="col-12">
+        <hr>
+        <table class="table table-bordered">
+            <thead style="width: 100%; background-color: black; color: white; font-weight: bold;">
+                <tr>
+                    <td scope="col">#</td>
+                    <td scope="col">Tarea</td>
+                    <td scope="col">Nombre</td>
+                    <td scope="col">Estado</td>
+                    <td scope="col">Gestionar</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of array; let indice=index">
+                    <td>{{ indice+1 }}</td>
+                    <td>{{ item.key }}</td>
+                    <td>{{ item.fields.summary }}</td>
+                    <td>{{ item.fields.status.name }}</td>
+                    <td><i class="fa fa-edit" style="cursor: pointer;" (click)="GestionaCaso(item.key)"></i></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

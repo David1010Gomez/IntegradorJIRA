@@ -11,6 +11,8 @@ import { AutomatizacionesComponent } from './components/automatizaciones/automat
 import { ROUTES } from './app.routes';
 import { DocumentacionComponent } from './components/automatizaciones/Menu1/documentacion/documentacion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { AprobacionMantisComponent } from './components/automatizaciones/Menu1/aprobacionMantis/aprobacionMantis.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
     NavComponent,
     InicioComponent,
     AutomatizacionesComponent,
-    DocumentacionComponent
+    DocumentacionComponent,
+    LoadingComponent,
+    AprobacionMantisComponent
   ],
   imports: [
     BrowserModule,

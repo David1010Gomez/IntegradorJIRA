@@ -1,16 +1,19 @@
-<div class="row">
+<app-loading *ngIf="loading"></app-loading>
+<div class="row" *ngIf="!loading">
     <div class="md-5">
         <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a [class]="claseCambio1" style="color:#fff; background-color:#a2a2a2;" href="#" (click)="cambiaPanel('1')">
+            <li class="nav-item" style="padding: 15px;">
+                <div [class]="claseCambio1" style="color:#fff; background-color:#a2a2a2; cursor: pointer;" href="#" (click)="cambiaPanel('1')">
                     <i class="fa fa-upload" aria-hidden="true"> </i> Sin documentacion
-                </a>
+                </div>
             </li>
-            <li class="nav-item">
-                <!-- <a [class]="claseCambio2" style="color:#fff; background-color:#a2a2a2;" href="#" (click)="cambiaPanel('2')">Link</a> -->
+            <li class="nav-item" style="padding: 15px;">
+                <div [class]="claseCambio2" style="color:#fff; background-color:#a2a2a2; cursor: pointer;" href="#" (click)="cambiaPanel('2')">
+                    <i class="fa fa-check" aria-hidden="true"> </i> Aprobación MANTIS</div>
             </li>
         </ul>
         <br>
         <app-documentacion *ngIf="Menu1"></app-documentacion>
+        <app-aprobacion-mantis *ngIf="Menu2"></app-aprobacion-mantis>
     </div>
 </div>
